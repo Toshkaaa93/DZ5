@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-center">
+    <h1>Столицы мира</h1>
+</div>
+
+<div class="d-flex justify-content-center">
+    <form class="d-flex flex-column align-items-center" action="/adcities" method="POST">
+        <div class="mb-3">
+            <input name="imgs" placeholder="Ссылка на изображение" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input name="textPost" placeholder="Текст" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Добавить пост</button>
+    </form>
+</div>
+<hr />
+
+<section class="d-flex justify-content-center">
+    {{#each listOfCities}}
+    <div class="card mx-2" style="width: 25rem;">
+        <img src="{{this.imgs}}" class="card-img-top" alt="">
+        <div class="card-body">
+            <p class="card-text">{{this.textPost}}</p>
+        </div>
+    </div>
+
+    {{/each}}
+</section>
